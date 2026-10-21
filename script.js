@@ -2,10 +2,10 @@ let player = document.getElementById("player");
 let playBtn = document.getElementById("playBtn");
 let pauseBtn = document.getElementById("pauseBtn");
 let stopBtn = document.getElementById("stopBtn");
-const audio = document.getElementById("audio")
-const statusText = document.getElementById("statusText");
-const progressFill = document.getElementById("progressFill");
-const progressContainer = document.getElementById("progressContainer");
+let audio = document.getElementById("audio")
+let statusText = document.getElementById("statusText");
+let progressFill = document.getElementById("progressFill");
+let progressContainer = document.getElementById("progressContainer");
 
 playBtn.addEventListener("click", playAudio);
 pauseBtn.addEventListener("click", pauseAudio);
