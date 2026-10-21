@@ -2,10 +2,11 @@ let player = document.getElementById("player");
 let playBtn = document.getElementById("playBtn");
 let pauseBtn = document.getElementById("pauseBtn");
 let stopBtn = document.getElementById("stopBtn");
-let audio = document.getElementById("audio")
+let video = document.getElementById("video")
 let statusText = document.getElementById("statusText");
 let progressFill = document.getElementById("progressFill");
 let progressContainer = document.getElementById("progressContainer");
+let playIcon = document.getElementById("playIcon");
 
 playBtn.addEventListener("click", playAudio);
 pauseBtn.addEventListener("click", pauseAudio);
@@ -43,11 +44,11 @@ function stopVideo() {
 }
 
 playBtn.addEventListener("click", () => {
-    if (audio.paused){
-        audio.play();
+    if (video.paused){
+        video.play();
         statusText.innerText = "Soundscape is playing now";
     }else{
-        audio.pause();
+        video.pause();
         statusText = innerText = "Soundscape is currently not playing"
     }
 })
