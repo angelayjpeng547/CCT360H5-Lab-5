@@ -40,9 +40,9 @@ audio.addEventListener("timeupdate", () =>{
 });
 */
 
-playBtn.addEventListener("click", playVideo);
-pauseBtn.addEventListener("click", pauseVideo);
-stopBtn.addEventListener("click", stopVideo);
+playBtn.addEventListener("click", playVideo());
+pauseBtn.addEventListener("click", pauseVideo());
+stopBtn.addEventListener("click", stopVideo());
 
 function playVideo() {
   video.play();
@@ -60,7 +60,6 @@ function stopVideo() {
 playBtn.addEventListener("click", () =>{
     if (video.paused || video.ended){
         video.play();
-        statusText.innerText = "Videoscape is playing";
     }else{
         video.pause();
     }
@@ -68,12 +67,10 @@ playBtn.addEventListener("click", () =>{
 
 pauseBtn.addEventListener("click", () =>{
     video.pause();
-    statusText.innerText = "Videoscape is not playing";
 }); 
 stopBtn.addEventListener("click", () =>{
     video.pause();
     video.currentTime = 0;
-    statusText.innerText = "Videoscape has ended";
     progressFill.style.width = "0%";
 });
 
@@ -85,9 +82,9 @@ video.addEventListener("pause", () => {
     statusText.innerText = "Videoscape is not playing";
 });
 
-/*video.addEventListener("ended", () =>{
+video.addEventListener("ended", () =>{
      statusText.innerText = "Videoscape has ended";
-});*/
+});
 
 progressContainer.addEventListener("click", (e) =>{
     const width = progressContainer.clientWidth;
