@@ -1,14 +1,20 @@
 let playBtn = document.getElementById("playBtn");
 let pauseBtn = document.getElementById("pauseBtn");
 let stopBtn = document.getElementById("stopBtn");
+let increaseVolume = document.getElementById("increaseVolume");
+let decreaseVolume = document.getElementById ("decraseVolume");
 let video = document.getElementById("video")
 let statusText = document.getElementById("statusText");
 let progressFill = document.getElementById("progressFill");
 let progressContainer = document.getElementById("progressContainer");
+let volumeMessage = document.getElementById("volumemessage");
 
 playBtn.addEventListener("click", playVideo());
 pauseBtn.addEventListener("click", pauseVideo());
 stopBtn.addEventListener("click", stopVideo());
+
+increaseVolume.addEventListener("click", volumeUp());
+decreaseVolume.addEventListener("click", volumeDown());
 
 function playVideo() {
   video.play();
@@ -65,3 +71,27 @@ video.addEventListener("timeupdate", () =>{
     const progress = (video.currentTime / video.duration) * 100;
     progressFill.style.width = progress + "%";
 });
+
+let volume = 1.0;
+function volumeUp() {
+	volume += 0.1;
+	if(volume > 1.0){
+	    volume = 1.0;
+}
+	player.volume = volume;
+  	updateMessage();
+}
+function volumeDown() {
+	volume -= 0.1;
+	if(volume < 0.0){
+	    volume = 0.0;
+}
+	player.volume = volume;
+  	updateMessage();
+}
+function updateMessage() {
+  volumeMessage.innerHTML = "time: " + player.currentTime;
+  volumeMessage.innerHTML += "<br>";
+  volumeMessage.innerHTML += "volume: " + player.volume;
+}
+
