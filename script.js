@@ -5,7 +5,6 @@ let video = document.getElementById("video")
 let statusText = document.getElementById("statusText");
 let progressFill = document.getElementById("progressFill");
 let progressContainer = document.getElementById("progressContainer");
-let playIcon = document.getElementById("playIcon");
 
 /* playBtn.addEventListener("click", playAudio);
 pauseBtn.addEventListener("click", pauseAudio);
@@ -60,9 +59,8 @@ function stopVideo() {
 
 playBtn.addEventListener("click", () =>{
     if (video.paused || video.ended){
-        video.play().catch(error => {
-            console.error ("Video is not working:", error);
-        });
+        video.play();
+        statusText.innerText = "Videoscape is playing";
     }else{
         video.pause();
     }
@@ -70,23 +68,26 @@ playBtn.addEventListener("click", () =>{
 
 pauseBtn.addEventListener("click", () =>{
     video.pause();
+    statusText.innerText = "Videoscape is not playing";
 }); 
 stopBtn.addEventListener("click", () =>{
     video.pause();
     video.currentTime = 0;
+    statusText.innerText = "Videoscape has ended";
+    progressFill.style.width = "0%";
 });
 
 video.addEventListener("play", () => {
-    statusText.innerText = "Visualscape is playing";
+    statusText.innerText = "Videoscape is playing";
 });
 
 video.addEventListener("pause", () => {
-    statusText.innerText = "Visualscape is not playing";
+    statusText.innerText = "Videoscape is not playing";
 });
 
-video.addEventListener("ended", () =>{
-     statusText.innerText = "Visualscape has ended";
-});
+/*video.addEventListener("ended", () =>{
+     statusText.innerText = "Videoscape has ended";
+});*/
 
 progressContainer.addEventListener("click", (e) =>{
     const width = progressContainer.clientWidth;
