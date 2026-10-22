@@ -91,7 +91,7 @@ player.addEventListener("ended", () =>{
 progressContainer.addEventListener("click", (e) =>{
     const width = progressContainer.clientWidth;
     const clickX = e.offsetX;
-    const duration = audio.duration;
+    const duration = video.duration;
     if (duration){
         video.currentTime = (clickX / width) * duration;
     }
