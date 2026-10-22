@@ -76,15 +76,15 @@ stop.Btn.addEventListener("click", () =>{
     video.currentTime = 0;
 });
 
-player.addEventListener("play", () => {
+video.addEventListener("play", () => {
     statusText.innerText = "Visualscape is playing";
 });
 
-player.addEventListener("pause", () => {
+video.addEventListener("pause", () => {
     statusText.innerText = "Visualscape is not playing";
 });
 
-player.addEventListener("ended", () =>{
+video.addEventListener("ended", () =>{
      statusText.innerText = "Visualscape has ended";
 });
 
