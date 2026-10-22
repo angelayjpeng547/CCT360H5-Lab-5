@@ -59,4 +59,9 @@ progressContainer.addEventListener("click", (e) =>{
     if (duration){
         video.currentTime = (clickX / width) * duration;
     }
-})
+});
+
+video.addEventListener("timeupdate", () =>{
+    const progress = (video.currentTime / video.duration) * 100;
+    progressFill.style.width = progress + "%";
+});
