@@ -68,6 +68,14 @@ playBtn.addEventListener("click", () =>{
     }
 });
 
+pauseBtn.addEventListener("click", () =>{
+    video.pause();
+}); 
+stop.Btn.addEventListener("click", () =>{
+    video.pause();
+    video.currentTime = 0;
+});
+
 player.addEventListener("play", () => {
     statusText.innerText = "Visualscape is playing";
 });
