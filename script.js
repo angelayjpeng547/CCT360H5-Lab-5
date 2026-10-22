@@ -60,7 +60,11 @@ function stopVideo() {
 
 playBtn.addEventListener("click", () =>{
     if (video.paused || video.ended){
-
+        video.play().catch(error => {
+            console.error ("Video is not working:", error);
+        });
+    }else{
+        video.pause();
     }
 });
 
