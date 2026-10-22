@@ -50,19 +50,6 @@ h1{
     background-color: rgb(252, 239, 252)
 }
 
-.volumeup, .volumedown{
-    background-color: #f31580;
-    color: black;
-    font-size: 18px;
-    border: 10px;
-    border-radius: 16px;
-    cursor:pointer;
-    transition:background-color 0.3s ease;
-    padding: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    max-width: 300px;
-}
-
 
 video{
     max-width: 100%;
