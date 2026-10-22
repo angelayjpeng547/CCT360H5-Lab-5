@@ -5,12 +5,10 @@ let video = document.getElementById("video")
 let statusText = document.getElementById("statusText");
 let progressFill = document.getElementById("progressFill");
 let progressContainer = document.getElementById("progressContainer");
-let volumeMessage = document.getElementById("volumemessage");
 
 playBtn.addEventListener("click", playVideo());
 pauseBtn.addEventListener("click", pauseVideo());
 stopBtn.addEventListener("click", stopVideo());
-
 
 function playVideo() {
   video.play();
@@ -36,6 +34,7 @@ playBtn.addEventListener("click", () =>{
 pauseBtn.addEventListener("click", () =>{
     video.pause();
 }); 
+
 stopBtn.addEventListener("click", () =>{
     video.pause();
     video.currentTime = 0;
@@ -67,4 +66,3 @@ video.addEventListener("timeupdate", () =>{
     const progress = (video.currentTime / video.duration) * 100;
     progressFill.style.width = progress + "%";
 });
-
