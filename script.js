@@ -1,4 +1,3 @@
-let player = document.getElementById("player");
 let playBtn = document.getElementById("playBtn");
 let pauseBtn = document.getElementById("pauseBtn");
 let stopBtn = document.getElementById("stopBtn");
@@ -13,16 +12,16 @@ pauseBtn.addEventListener("click", pauseAudio);
 stopBtn.addEventListener("click", stopAudio);
 
 function playAudio() {
-  player.play();
+  audio.play();
 }
 
 function pauseAudio() {
-  player.pause();
+  audio.pause();
 }
 
 function stopAudio() {
-  player.currentTime = 0;
-  player.pause();
+  audio.currentTime = 0;
+  audio.pause();
 }
 
 
@@ -31,31 +30,43 @@ pauseBtn.addEventListener("click", pauseVideo);
 stopBtn.addEventListener("click", stopVideo);
 
 function playVideo() {
-  player.play();
+  video.play();
 }
 
 function pauseVideo() {
-  player.pause();
+  video.pause();
 }
 
 function stopVideo() {
-  player.currentTime = 0;
-  player.pause();
+  video.currentTime = 0;
+  video.pause();
 }
 
 playBtn.addEventListener("click", () => {
-    if (video.paused){
-        video.play();
-        statusText.innerText = "Soundscape is playing now";
+    if (audio.paused){
+        audio.play().catch(error => {
+            console.error ("Audio is not working");
+        })
     }else{
-        video.pause();
-        statusText = innerText = "Soundscape is currently not playing"
+        audio.pause();
     }
 })
 
 audio.addEventListener("timeupdate", () =>{
     const progress = (audio.currentTime / audio.duration) * 100;
-    progressFill.style.width = '${progress}%';
+    progressFill.style.width = `${progress}%`;
+});
+
+player.addEventListener("play", () => {
+    statusText.innerText = "Visualscape is playing";
+});
+
+player.addEventListener("pause", () => {
+    statusText.innerText = "Visualscape is not playing";
+});
+
+player.addEventListener("ended", () =>{
+     statusText.innerText = "Visualscape has ended";
 });
 
 progressContainer.addEventListener("click", (e) =>{
@@ -63,6 +74,6 @@ progressContainer.addEventListener("click", (e) =>{
     const clickX = e.offsetX;
     const duration = audio.duration;
     if (duration){
-        audio.currentTime = (clickX / width) * duration;
+        video.currentTime = (clickX / width) * duration;
     }
 })
