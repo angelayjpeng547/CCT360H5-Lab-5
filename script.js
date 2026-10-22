@@ -7,7 +7,7 @@ let progressFill = document.getElementById("progressFill");
 let progressContainer = document.getElementById("progressContainer");
 let playIcon = document.getElementById("playIcon");
 
-playBtn.addEventListener("click", playAudio);
+/* playBtn.addEventListener("click", playAudio);
 pauseBtn.addEventListener("click", pauseAudio);
 stopBtn.addEventListener("click", stopAudio);
 
@@ -24,6 +24,22 @@ function stopAudio() {
   audio.pause();
 }
 
+
+playBtn.addEventListener("click", () => {
+    if (audio.paused){
+        audio.play().catch(error => {
+            console.error ("Audio is not working");
+        })
+    }else{
+        audio.pause();
+    }
+})
+
+audio.addEventListener("timeupdate", () =>{
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = `${progress}%`;
+});
+*/
 
 playBtn.addEventListener("click", playVideo);
 pauseBtn.addEventListener("click", pauseVideo);
@@ -42,19 +58,10 @@ function stopVideo() {
   video.pause();
 }
 
-playBtn.addEventListener("click", () => {
-    if (audio.paused){
-        audio.play().catch(error => {
-            console.error ("Audio is not working");
-        })
-    }else{
-        audio.pause();
-    }
-})
+playBtn.addEventListener("click", () =>{
+    if (video.paused || video.ended){
 
-audio.addEventListener("timeupdate", () =>{
-    const progress = (audio.currentTime / audio.duration) * 100;
-    progressFill.style.width = `${progress}%`;
+    }
 });
 
 player.addEventListener("play", () => {
