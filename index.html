@@ -22,7 +22,7 @@
     <div class="partb">
       <h1>Part B: Visualscape</h1>
       <p>A 72 second video of Shanghai, China. Please the three buttons below the video and the progress bar at the bottom of the page to interact with the video as an user interaction.</p>
-      <video id="video" controls>
+      <video id="video">
         <source src="video/shanghailandscape.mp4" type="video/mp4">
         This browser does not support video.
       </video>
@@ -33,12 +33,9 @@
         <button class="btnplay" id="playBtn">Play VideoScape</button>
         <button class="btnpause" id="pauseBtn">Pause VideoScape</button>
         <button class="btnstop" id="stopBtn">Stop VideoScape</button>
-        <button class="volumeup" id="increaseVolume">Volume Up</button>
-        <button class="volumedown" id="decreaseVolume">Volume Down</button>
         
         <div class="trackinfo">
           <p id="statusText">Videoscape Paused</p>
-          <p id = "volumeMessage">Volume: 1.0</p>
           <div class="progressbarcontainer" id="progressContainer">
             <div class="progressfill" id="progressFill">
             </div>
