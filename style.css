@@ -26,37 +26,6 @@ h1{
 }
 
 .btnplay, .btnpause, .btnstop{
-    background: violet;
-    border: 2px;
-    width: 100px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.1s ease;
-}
-
-.btnplay:hover{
-    transform: scale (1.00);
-    background: rgb(252, 239, 252)
-}
-
-.btnplay svg{
-    width: 20px; 
-    height: 20px;
-    fill: white;
-}
-
-video{
-    max-width: 100%;
-    width: 600px;
-    height: auto;
-    align-items: center;
-}
-
-button{
     background-color:violet;
     color: black;
     font-size: 18px;
@@ -69,13 +38,27 @@ button{
     max-width: 800px;
 }
 
-button:hover{
+.btnplay:hover{
     background-color:#dfa2ee
 }
 
-button.active{
+.btnpause.hover{
     background-color:#e683ff
 }
+
+.btnstop:hover{
+    background: rgb(252, 239, 252)
+}
+
+
+video{
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+    align-items: center;
+}
+
+
 
 #navigation-instruction{
     font-size: 16px;
