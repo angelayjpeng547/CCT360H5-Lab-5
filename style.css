@@ -35,7 +35,7 @@ h1{
     transition:background-color 0.3s ease;
     padding: 20px;
     font-family: 'Times New Roman', Times, serif;
-    max-width: 800px;
+    max-width: 300px;
 }
 
 .btnplay:hover{
@@ -47,7 +47,7 @@ h1{
 }
 
 .btnstop:hover{
-    background: rgb(252, 239, 252)
+    background-color: rgb(252, 239, 252)
 }
 
 
@@ -58,18 +58,15 @@ video{
     align-items: center;
 }
 
-
-
-#navigation-instruction{
-    font-size: 16px;
-    color: black;
-    margin-bottom: 10px;
+.controlspanel{
+    background-color: #f6b1d9;
+    width: 100%
 }
 
 .progressbarcontainer {
     width: 100%;
     background: #ffe6ea;
-    height: 2px;
+    height: 50px;
     border-radius: 4px;
     margin-top: 8px;
     cursor: pointer;
@@ -77,9 +74,10 @@ video{
 
 .progressfill {
     height: 100%;
-    background: red;
+    background-color: red;
     width: 0%;
-    border-radius: 2px;
+    border-radius: 5px;
+    height: 50px;
 }
 
 .track-info{
