@@ -71,7 +71,7 @@ playBtn.addEventListener("click", () =>{
 pauseBtn.addEventListener("click", () =>{
     video.pause();
 }); 
-stop.Btn.addEventListener("click", () =>{
+stopBtn.addEventListener("click", () =>{
     video.pause();
     video.currentTime = 0;
 });

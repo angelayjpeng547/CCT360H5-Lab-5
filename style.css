@@ -25,7 +25,7 @@ h1{
     background-color: rgb(247, 137, 156)
 }
 
-.btnplay, .btnpause, .btnstop{
+#btnplay, #btnpause, #btnstop{
     background-color:violet;
     color: black;
     font-size: 18px;
@@ -38,15 +38,15 @@ h1{
     max-width: 800px;
 }
 
-.btnplay:hover{
+#btnplay:hover{
     background-color:#dfa2ee
 }
 
-.btnpause.hover{
+#btnpause.hover{
     background-color:#f2d5f9
 }
 
-.btnstop:hover{
+#btnstop:hover{
     background: rgb(252, 239, 252)
 }
 
