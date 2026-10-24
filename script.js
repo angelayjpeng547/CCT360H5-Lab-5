@@ -5,23 +5,10 @@ let video = document.getElementById("video")
 let statusText = document.getElementById("statusText");
 let progressFill = document.getElementById("progressFill");
 let progressContainer = document.getElementById("progressContainer");
+let volumeUp = document.getElementById("volumeUp");
+let volumeDown = document.getElementById("volumeDown");
+let volumeMessage = document.getElementById("volumeMessage")
 
-playBtn.addEventListener("click", playVideo());
-pauseBtn.addEventListener("click", pauseVideo());
-stopBtn.addEventListener("click", stopVideo());
-
-function playVideo() {
-  video.play();
-}
-
-function pauseVideo() {
-  video.pause();
-}
-
-function stopVideo() {
-  video.currentTime = 0;
-  video.pause();
-}
 
 playBtn.addEventListener("click", () =>{
     if (video.paused || video.ended){
@@ -65,4 +52,23 @@ progressContainer.addEventListener("click", (e) =>{
 video.addEventListener("timeupdate", () =>{
     const progress = (video.currentTime / video.duration) * 100;
     progressFill.style.width = progress + "%";
+});
+
+let volume = 1.0;
+volumeUp.addEventListener("click", () =>{
+    volume = Math.min(1.0, Math.round ((volume + 0.1) * 10) / 10);
+    if (volume > 1.0){
+        volume = 1.0;
+    }
+    video.volume = volume;
+    volumeMessage.innerText = "Volume: " + video.volume;
+});
+
+volumeDown.addEventListener("click", () =>{
+    volume = Math.max(0.0, Math.round ((volume - 0.1) * 10) / 10);
+    if (volume < 0.0){
+        volume = 0.0;
+    }
+    video.volume = volume;
+    volumeMessage.innerText = "Volume: " + video.volume;
 });
