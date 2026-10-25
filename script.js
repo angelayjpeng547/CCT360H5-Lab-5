@@ -29,15 +29,15 @@ stopBtn.addEventListener("click", () =>{
 });
 
 video.addEventListener("play", () => {
-    statusText.innerText = "Videoscape is playing";
+    statusText.innerText = "Visualscape is playing";
 });
 
 video.addEventListener("pause", () => {
-    statusText.innerText = "Videoscape is not playing";
+    statusText.innerText = "Visualscape is not playing";
 });
 
 video.addEventListener("ended", () =>{
-     statusText.innerText = "Videoscape has ended";
+     statusText.innerText = "Visualscape has ended";
 });
 
 progressContainer.addEventListener("click", (e) =>{
