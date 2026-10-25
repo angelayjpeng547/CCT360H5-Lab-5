@@ -13,6 +13,12 @@ h1{
     margin: 10px;
     text-align: center;
 }
+
+p{
+    color:black;
+    margin: 10px;
+    text-align: left; 
+}
 .buttons{
     margin-bottom: 10px;
 }
